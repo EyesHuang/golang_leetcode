@@ -47,3 +47,12 @@ func Test_FibTopDown(t *testing.T) {
 		})
 	}
 }
+
+func Test_FibDownTop(t *testing.T) {
+	for _, tc := range testCases {
+		t.Run(tc.param, func(t *testing.T) {
+			rsp := q509Fn.FibBottomUp(tc.n)
+			assert.Equal(t, tc.ans, rsp)
+		})
+	}
+}
