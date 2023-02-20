@@ -4,8 +4,8 @@ package fibonacci_number
 // Time Complexity: O(2^n)
 // Space Complexity: O(n)
 func FibBruteforce(n int) int {
-	if n == 1 || n == 2 {
-		return 1
+	if n <= 1 {
+		return n
 	}
 	return FibBruteforce(n-1) + FibBruteforce(n-2)
 }
@@ -19,7 +19,7 @@ func FibTopDown(n int) int {
 }
 
 func helper(memo []int, n int) int {
-	if n == 0 || n == 1 {
+	if n <= 1 {
 		return n
 	}
 
@@ -53,7 +53,7 @@ func FibBottomUp(n int) int {
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 func FibTwoVars(n int) int {
-	if n == 0 || n == 1 {
+	if n <= 1 {
 		return n
 	}
 
