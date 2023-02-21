@@ -51,3 +51,12 @@ func Test_CoinChangeTopDown(t *testing.T) {
 		})
 	}
 }
+
+func Test_CoinChangeBottomUp(t *testing.T) {
+	for _, tc := range testCases {
+		t.Run(tc.param, func(t *testing.T) {
+			rsp := q322Fn.CoinChangeBottomUp(tc.coins, tc.amount)
+			assert.Equal(t, tc.ans, rsp)
+		})
+	}
+}

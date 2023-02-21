@@ -71,3 +71,28 @@ func coinChange(coins []int, rem int, count []int) int {
 		return minVal
 	}
 }
+
+// CoinChangeBottomUp
+// Time Complexity: O(S*n) (S is the amount, n is the number of coins)
+// Space Complexity: O(S) (S is the amount to change)
+func CoinChangeBottomUp(coins []int, amount int) int {
+	max := amount + 1
+	dp := make([]int, max)
+	for i := 0; i < max; i++ {
+		dp[i] = max
+	}
+	dp[0] = 0
+	for i := 1; i <= amount; i++ {
+		for j := 0; j < len(coins); j++ {
+			if coins[j] <= i {
+				dp[i] = min(dp[i], dp[i-coins[j]]+1)
+			}
+		}
+	}
+
+	if dp[amount] > amount {
+		return -1
+	} else {
+		return dp[amount]
+	}
+}
