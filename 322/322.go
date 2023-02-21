@@ -3,8 +3,8 @@ package coin_change
 import "math"
 
 // CoinChangeBruteForce
-// Time Complexity: O(S^n) (S is the amount, n is the number of coins)
-// Space Complexity: O(n)
+// Time Complexity: O(S^n) (S is the amount, n is the number of denominations)
+// Space Complexity: O(S)
 func CoinChangeBruteForce(coins []int, amount int) int {
 	if amount == 0 {
 		return 0
@@ -37,49 +37,51 @@ func min(x, y int) int {
 }
 
 // CoinChangeTopDown
-// Time Complexity: O(S*n) (S is the amount, n is the number of coins)
+// Time Complexity: O(S*n) (S is the amount, n is the number of denominations)
 // Space Complexity: O(S) (S is the amount to change)
+var memo []int
+
 func CoinChangeTopDown(coins []int, amount int) int {
-	if amount < 1 {
-		return 0
-	}
-	return coinChange(coins, amount, make([]int, amount))
+	memo = make([]int, amount+1)
+	return recursionHelper(coins, amount)
 }
 
-func coinChange(coins []int, rem int, count []int) int {
-	if rem < 0 {
+func recursionHelper(coins []int, remain int) int {
+	if remain < 0 {
 		return -1
-	} else if rem == 0 {
+	} else if remain == 0 {
 		return 0
 	}
 
-	if count[rem-1] != 0 {
-		return count[rem-1]
+	if memo[remain] != 0 {
+		return memo[remain]
 	}
 
-	minVal := math.MaxInt
+	minCount := math.MaxInt
 	for _, coin := range coins {
-		res := coinChange(coins, rem-coin, count)
-		if res >= 0 && res < minVal {
-			minVal = 1 + res
+		count := recursionHelper(coins, remain-coin)
+		if count == -1 {
+			continue
 		}
+		minCount = min(minCount, count+1)
 	}
 
-	if minVal == math.MaxInt {
-		return -1
+	if minCount == math.MaxInt {
+		memo[remain] = -1
 	} else {
-		return minVal
+		memo[remain] = minCount
 	}
+
+	return memo[remain]
 }
 
 // CoinChangeBottomUp
-// Time Complexity: O(S*n) (S is the amount, n is the number of coins)
+// Time Complexity: O(S*n) (S is the amount, n is the number of denominations)
 // Space Complexity: O(S) (S is the amount to change)
 func CoinChangeBottomUp(coins []int, amount int) int {
-	max := amount + 1
-	dp := make([]int, max)
-	for i := 0; i < max; i++ {
-		dp[i] = max
+	dp := make([]int, amount+1)
+	for i := 0; i < amount+1; i++ {
+		dp[i] = amount + 1
 	}
 	dp[0] = 0
 	for i := 1; i <= amount; i++ {
@@ -90,7 +92,7 @@ func CoinChangeBottomUp(coins []int, amount int) int {
 		}
 	}
 
-	if dp[amount] > amount {
+	if dp[amount] == amount+1 {
 		return -1
 	} else {
 		return dp[amount]
