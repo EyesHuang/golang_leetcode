@@ -1,29 +1,10 @@
 package merge_two_sorted_lists
 
 import (
+	"leetcode/util"
 	"reflect"
 	"testing"
 )
-
-// Utility function to create a linked list from a slice.
-func createLinkedList(elements []int) *ListNode {
-	dummy := &ListNode{}
-	current := dummy
-	for _, val := range elements {
-		current.Next = &ListNode{Val: val}
-		current = current.Next
-	}
-	return dummy.Next
-}
-
-// Utility function to convert a linked list back to a slice.
-func linkedListToSlice(head *ListNode) []int {
-	var elements []int
-	for current := head; current != nil; current = current.Next {
-		elements = append(elements, current.Val)
-	}
-	return elements
-}
 
 func TestMergeTwoLists(t *testing.T) {
 	var emptySlice []int
@@ -62,11 +43,11 @@ func TestMergeTwoLists(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			l1 := createLinkedList(tt.list1)
-			l2 := createLinkedList(tt.list2)
+			l1 := util.CreateLinkedList(tt.list1)
+			l2 := util.CreateLinkedList(tt.list2)
 
 			result := mergeTwoLists(l1, l2)
-			resultSlice := linkedListToSlice(result)
+			resultSlice := util.LinkedListToSlice(result)
 
 			if !reflect.DeepEqual(resultSlice, tt.expected) {
 				t.Errorf("mergeTwoLists(%v, %v) got %v, want %v", tt.list1, tt.list2, resultSlice, tt.expected)
