@@ -15,7 +15,6 @@ func partition(head *util.ListNode, x int) *util.ListNode {
 		} else {
 			p2.Next = head
 			p2 = p2.Next
-
 		}
 
 		tmp := head.Next

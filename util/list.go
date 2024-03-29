@@ -24,7 +24,7 @@ func CreateLinkedList(elements []int) *ListNode {
 func LinkedListToSlice(head *ListNode) []int {
 	var elements []int
 
-	for current := head; current.Next != nil; current = current.Next {
+	for current := head; current != nil; current = current.Next {
 		elements = append(elements, current.Val)
 	}
 

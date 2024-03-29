@@ -33,7 +33,7 @@ func TestPartitionList(t *testing.T) {
 			result := partition(list, tt.x)
 			resultSlice := util.LinkedListToSlice(result)
 
-			if reflect.DeepEqual(resultSlice, tt.expected) {
+			if !reflect.DeepEqual(resultSlice, tt.expected) {
 				t.Errorf("got %v, want %v", resultSlice, tt.expected)
 			}
 		})
