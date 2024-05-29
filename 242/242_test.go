@@ -42,3 +42,15 @@ func TestIsAnagram_BruteForce(t *testing.T) {
 		})
 	}
 }
+
+func TestIsAnagram_FrequencyCounter(t *testing.T) {
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			res := isAnagram_FrequencyCounter(tt.s, tt.t)
+
+			if !reflect.DeepEqual(res, tt.expected) {
+				t.Errorf("got %v, want %v", res, tt.expected)
+			}
+		})
+	}
+}
