@@ -24,21 +24,21 @@ func isAnagram_bruteForce(s string, t string) bool {
 	}
 }
 
-func isAnagram_FrequencyCounter(s string, t string) bool {
+func isAnagram_frequencyCounter(s, t string) bool {
 	if len(s) != len(t) {
 		return false
 	}
 
-	counts := make(map[rune]int)
+	table := make([]int, 26)
 
-	for _, char := range s {
-		counts[char]++
+	for i := 0; i < len(s); i++ {
+		table[s[i]-'a']++
 	}
 
-	for _, char := range t {
-		counts[char]--
+	for i := 0; i < len(s); i++ {
+		table[t[i]-'a']--
 
-		if counts[char] < 0 {
+		if table[t[i]-'a'] < 0 {
 			return false
 		}
 	}
