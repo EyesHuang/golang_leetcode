@@ -44,7 +44,7 @@ func isAnagram_frequencyCounter(s, t string) bool {
 		table[s[i]-'a']++
 	}
 
-	for i := 0; i < len(s); i++ {
+	for i := 0; i < len(t); i++ {
 		table[t[i]-'a']--
 
 		if table[t[i]-'a'] < 0 {
