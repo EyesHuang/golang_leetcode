@@ -46,3 +46,18 @@ func TestReverseListIterative(t *testing.T) {
 		})
 	}
 }
+
+func TestReverseListRecursive(t *testing.T) {
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			headList := util.CreateLinkedList(tt.head)
+
+			res := reverseList_recursive(headList)
+			resSlice := util.LinkedListToSlice(res)
+
+			if !reflect.DeepEqual(resSlice, tt.expected) {
+				t.Errorf("got %v, want %v", resSlice, tt.expected)
+			}
+		})
+	}
+}
