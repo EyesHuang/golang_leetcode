@@ -6,10 +6,10 @@ import (
 	"testing"
 )
 
-func TestMergeTwoLists(t *testing.T) {
-	var emptySlice []int
+var (
+	emptySlice []int
 
-	tests := []struct {
+	tests = []struct {
 		name     string
 		list1    []int
 		list2    []int
@@ -39,14 +39,38 @@ func TestMergeTwoLists(t *testing.T) {
 			list2:    []int{2, 2, 2},
 			expected: []int{2, 2, 2, 2, 2, 2},
 		},
+		{
+			name:     "Test 5",
+			list1:    []int{1, 5, 30},
+			list2:    []int{3, 4, 6, 7},
+			expected: []int{1, 3, 4, 5, 6, 7, 30},
+		},
 	}
+)
 
+func TestMergeTwoLists_Iteration(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			l1 := util.CreateLinkedList(tt.list1)
 			l2 := util.CreateLinkedList(tt.list2)
 
-			result := mergeTwoLists(l1, l2)
+			result := mergeTwoLists_iteration(l1, l2)
+			resultSlice := util.LinkedListToSlice(result)
+
+			if !reflect.DeepEqual(resultSlice, tt.expected) {
+				t.Errorf("mergeTwoLists(%v, %v) got %v, want %v", tt.list1, tt.list2, resultSlice, tt.expected)
+			}
+		})
+	}
+}
+
+func TestMergeTwoLists_Recursion(t *testing.T) {
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			l1 := util.CreateLinkedList(tt.list1)
+			l2 := util.CreateLinkedList(tt.list2)
+
+			result := mergeTwoLists_recursion(l1, l2)
 			resultSlice := util.LinkedListToSlice(result)
 
 			if !reflect.DeepEqual(resultSlice, tt.expected) {
