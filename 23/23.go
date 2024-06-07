@@ -1,8 +1,9 @@
 package merge_k_sorted_lists
 
 import (
-	"leetcode/util"
 	"sort"
+
+	"leetcode/util"
 )
 
 func mergeKLists_BruteForce(lists []*util.ListNode) *util.ListNode {

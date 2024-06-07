@@ -1,9 +1,10 @@
 package running_sum_of_1d_array_test
 
 import (
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	q1480Rs1at "leetcode/1480"
-	"testing"
 )
 
 type q1480 struct {

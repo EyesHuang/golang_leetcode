@@ -1,14 +1,10 @@
 package maximum_depth_of_binary_tree
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "leetcode/util"
 
 // Time complexity: O(n)
 // Space complexity: O(n)
-func maxDepth(root *TreeNode) int {
+func maxDepth(root *util.TreeNode) int {
 	if root == nil {
 		return 0
 	}

@@ -1,39 +1,43 @@
 package maximum_depth_of_binary_tree
 
-import "testing"
+import (
+	"testing"
+
+	"leetcode/util"
+)
 
 var tests = []struct {
 	name string
-	root *TreeNode
+	root *util.TreeNode
 	want int
 }{
 	{"Test with an empty tree", nil, 0},
-	{"Test with a single node", &TreeNode{Val: 1}, 1},
+	{"Test with a single node", &util.TreeNode{Val: 1}, 1},
 	{
 		"Test with a balanced tree",
-		&TreeNode{
+		&util.TreeNode{
 			Val: 1,
-			Left: &TreeNode{
+			Left: &util.TreeNode{
 				Val:   2,
-				Left:  &TreeNode{Val: 4},
-				Right: &TreeNode{Val: 5},
+				Left:  &util.TreeNode{Val: 4},
+				Right: &util.TreeNode{Val: 5},
 			},
-			Right: &TreeNode{
+			Right: &util.TreeNode{
 				Val:   3,
-				Right: &TreeNode{Val: 6},
+				Right: &util.TreeNode{Val: 6},
 			},
 		},
 		3,
 	},
 	{
 		"Test with a skewed tree (left)",
-		&TreeNode{
+		&util.TreeNode{
 			Val: 1,
-			Left: &TreeNode{
+			Left: &util.TreeNode{
 				Val: 2,
-				Left: &TreeNode{
+				Left: &util.TreeNode{
 					Val:  3,
-					Left: &TreeNode{Val: 4},
+					Left: &util.TreeNode{Val: 4},
 				},
 			},
 		},
@@ -41,13 +45,13 @@ var tests = []struct {
 	},
 	{
 		"Test with a skewed tree (right)",
-		&TreeNode{
+		&util.TreeNode{
 			Val: 1,
-			Right: &TreeNode{
+			Right: &util.TreeNode{
 				Val: 2,
-				Right: &TreeNode{
+				Right: &util.TreeNode{
 					Val:   3,
-					Right: &TreeNode{Val: 4},
+					Right: &util.TreeNode{Val: 4},
 				},
 			},
 		},
@@ -55,7 +59,7 @@ var tests = []struct {
 	},
 }
 
-func TestXxx(t *testing.T) {
+func TestMaxDepth(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := maxDepth(tt.root)

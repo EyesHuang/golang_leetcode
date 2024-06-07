@@ -1,8 +1,9 @@
 package koko_eating_bananas_test
 
 import (
-	q875keb "leetcode/875"
 	"testing"
+
+	q875keb "leetcode/875"
 
 	"github.com/stretchr/testify/assert"
 )

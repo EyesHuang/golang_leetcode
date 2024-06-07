@@ -1,8 +1,9 @@
 package longest_substring_without_repeating_characters_test
 
 import (
-	q3Lswrc "leetcode/3"
 	"testing"
+
+	q3Lswrc "leetcode/3"
 
 	"github.com/stretchr/testify/assert"
 )

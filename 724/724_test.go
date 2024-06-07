@@ -1,9 +1,10 @@
 package find_pivot_index_test
 
 import (
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	q724Fpit "leetcode/724"
-	"testing"
 )
 
 type q724 struct {

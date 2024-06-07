@@ -1,9 +1,10 @@
 package fibonacci_number_test
 
 import (
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	q509Fn "leetcode/509"
-	"testing"
 )
 
 type q509 struct {
