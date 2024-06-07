@@ -1,9 +1,10 @@
 package reverse_linked_list
 
 import (
-	"leetcode/util"
 	"reflect"
 	"testing"
+
+	"leetcode/util"
 )
 
 var (

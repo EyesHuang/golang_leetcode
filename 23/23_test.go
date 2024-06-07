@@ -1,9 +1,10 @@
 package merge_k_sorted_lists
 
 import (
-	"leetcode/util"
 	"reflect"
 	"testing"
+
+	"leetcode/util"
 )
 
 var (

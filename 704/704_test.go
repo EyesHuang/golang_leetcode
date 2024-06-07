@@ -1,8 +1,9 @@
 package binary_search_test
 
 import (
-	q704Bs "leetcode/704"
 	"testing"
+
+	q704Bs "leetcode/704"
 
 	"github.com/stretchr/testify/assert"
 )

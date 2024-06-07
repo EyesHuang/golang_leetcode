@@ -1,9 +1,10 @@
 package coin_change_test
 
 import (
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	q322Fn "leetcode/322"
-	"testing"
 )
 
 type q322 struct {

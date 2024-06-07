@@ -1,9 +1,10 @@
 package partition_list
 
 import (
-	"leetcode/util"
 	"reflect"
 	"testing"
+
+	"leetcode/util"
 )
 
 func TestPartitionList(t *testing.T) {
