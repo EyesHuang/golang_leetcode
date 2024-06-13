@@ -1,9 +1,10 @@
 package subtree_of_another_tree
 
 import (
-	"leetcode/util"
 	"reflect"
 	"testing"
+
+	"leetcode/util"
 )
 
 var tests = []struct {

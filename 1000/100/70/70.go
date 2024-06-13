@@ -1,4 +1,4 @@
-package climbing_stairs
+package leetcode_70
 
 func climbStairs_BruteForce(n int) int {
 	return climb_stairs(0, n)

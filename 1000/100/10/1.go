@@ -1,4 +1,4 @@
-package two_sum
+package leetcode_10
 
 // Time complexity: O(n^2)
 // Space complexity: O(1)

@@ -1,9 +1,10 @@
-package same_tree
+package leetcode_90
 
 import (
-	"leetcode/util"
 	"reflect"
 	"testing"
+
+	"leetcode/util"
 )
 
 var tests = []struct {

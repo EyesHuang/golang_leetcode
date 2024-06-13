@@ -1,4 +1,4 @@
-package partition_list
+package leetcode_90
 
 import (
 	"reflect"

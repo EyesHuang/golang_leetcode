@@ -1,4 +1,4 @@
-package valid_parentheses
+package leetcode_20
 
 // Time complexity: O(n)
 // Space complexity: O(n)

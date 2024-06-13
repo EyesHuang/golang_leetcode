@@ -1,4 +1,4 @@
-package valid_parentheses
+package leetcode_20
 
 import (
 	"reflect"

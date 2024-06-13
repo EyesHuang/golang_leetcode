@@ -1,4 +1,4 @@
-package climbing_stairs
+package leetcode_70
 
 import "testing"
 
@@ -7,16 +7,16 @@ var tests = []struct {
 	stair    int
 	expected int
 }{
-	// {
-	// 	"Test 1",
-	// 	2,
-	// 	2,
-	// },
-	// {
-	// 	"Test 2",
-	// 	3,
-	// 	3,
-	// },
+	{
+		"Test 1",
+		2,
+		2,
+	},
+	{
+		"Test 2",
+		3,
+		3,
+	},
 	{
 		"Test 3",
 		5,

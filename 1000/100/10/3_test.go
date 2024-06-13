@@ -1,9 +1,7 @@
-package longest_substring_without_repeating_characters_test
+package leetcode_10
 
 import (
 	"testing"
-
-	q3Lswrc "leetcode/3"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -39,7 +37,7 @@ var testCases = []q3{
 func Test_BruteForce(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := q3Lswrc.LengthOfLongestSubstringBruteForce(tc.param)
+			rsp := LengthOfLongestSubstringBruteForce(tc.param)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}
@@ -48,7 +46,7 @@ func Test_BruteForce(t *testing.T) {
 func Test_S1(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := q3Lswrc.LengthOfLongestSubstringS1(tc.param)
+			rsp := LengthOfLongestSubstringS1(tc.param)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}
@@ -57,7 +55,7 @@ func Test_S1(t *testing.T) {
 func Test_S2(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := q3Lswrc.LengthOfLongestSubstring(tc.param)
+			rsp := LengthOfLongestSubstringS2(tc.param)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}

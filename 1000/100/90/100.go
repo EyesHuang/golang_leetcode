@@ -1,4 +1,4 @@
-package same_tree
+package leetcode_90
 
 import "leetcode/util"
 

@@ -1,4 +1,4 @@
-package merge_k_sorted_lists
+package leetcode_30
 
 import (
 	"reflect"
@@ -8,9 +8,9 @@ import (
 )
 
 var (
-	emptySlice []int
+	emptySlice23 []int
 
-	tests = []struct {
+	tests23 = []struct {
 		name     string
 		list     [][]int
 		expected []int
@@ -23,18 +23,18 @@ var (
 		{
 			"Test 2",
 			[][]int{},
-			emptySlice,
+			emptySlice23,
 		},
 		{
 			"Test 3",
 			[][]int{{}},
-			emptySlice,
+			emptySlice23,
 		},
 	}
 )
 
 func TestMergeKLists_BruteForce(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests23 {
 		var lists []*util.ListNode
 
 		for _, l := range tt.list {

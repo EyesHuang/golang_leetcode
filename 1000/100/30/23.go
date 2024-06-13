@@ -1,4 +1,4 @@
-package merge_k_sorted_lists
+package leetcode_30
 
 import (
 	"sort"
