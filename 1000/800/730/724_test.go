@@ -1,10 +1,9 @@
-package find_pivot_index_test
+package leetcode_730
 
 import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	q724Fpit "leetcode/724"
 )
 
 type q724 struct {
@@ -13,7 +12,7 @@ type q724 struct {
 	ans   int
 }
 
-var testCases = []q724{
+var testCases724 = []q724{
 	{
 		"scenario 1",
 		[]int{1, 7, 3, 6, 5, 6},
@@ -32,18 +31,18 @@ var testCases = []q724{
 }
 
 func Test_PivotIndex(t *testing.T) {
-	for _, tc := range testCases {
+	for _, tc := range testCases724 {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := q724Fpit.PivotIndex(tc.array)
+			rsp := PivotIndex(tc.array)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}
 }
 
 func Test_PivotIndexS2(t *testing.T) {
-	for _, tc := range testCases {
+	for _, tc := range testCases724 {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := q724Fpit.PivotIndexS2(tc.array)
+			rsp := PivotIndexS2(tc.array)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}
