@@ -1,10 +1,9 @@
-package running_sum_of_1d_array_test
+package leetcode_1480
 
 import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	q1480Rs1at "leetcode/1480"
 )
 
 type q1480 struct {
@@ -13,7 +12,7 @@ type q1480 struct {
 	ans   []int
 }
 
-var testCases = []q1480{
+var testCases1480 = []q1480{
 	{
 		"scenario 1",
 		[]int{1, 2, 3, 4},
@@ -32,9 +31,9 @@ var testCases = []q1480{
 }
 
 func Test_RunningSum(t *testing.T) {
-	for _, tc := range testCases {
+	for _, tc := range testCases1480 {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := q1480Rs1at.RunningSum(tc.array)
+			rsp := runningSum(tc.array)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}

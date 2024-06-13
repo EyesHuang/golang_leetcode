@@ -1,6 +1,6 @@
-package running_sum_of_1d_array
+package leetcode_1480
 
-func RunningSum(nums []int) []int {
+func runningSum(nums []int) []int {
 	length := len(nums)
 	res := make([]int, length)
 	res[0] = nums[0]
