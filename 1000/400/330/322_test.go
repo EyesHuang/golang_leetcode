@@ -1,10 +1,9 @@
-package coin_change_test
+package leetcode_330
 
 import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	q322Fn "leetcode/322"
 )
 
 type q322 struct {
@@ -14,7 +13,7 @@ type q322 struct {
 	ans    int
 }
 
-var testCases = []q322{
+var testCases322 = []q322{
 	{
 		"Scenario 1",
 		[]int{1, 2},
@@ -36,27 +35,27 @@ var testCases = []q322{
 }
 
 func Test_CoinChangeBruteForce(t *testing.T) {
-	for _, tc := range testCases {
+	for _, tc := range testCases322 {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := q322Fn.CoinChangeBruteForce(tc.coins, tc.amount)
+			rsp := CoinChangeBruteForce(tc.coins, tc.amount)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}
 }
 
 func Test_CoinChangeTopDown(t *testing.T) {
-	for _, tc := range testCases {
+	for _, tc := range testCases322 {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := q322Fn.CoinChangeTopDown(tc.coins, tc.amount)
+			rsp := CoinChangeTopDown(tc.coins, tc.amount)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}
 }
 
 func Test_CoinChangeBottomUp(t *testing.T) {
-	for _, tc := range testCases {
+	for _, tc := range testCases322 {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := q322Fn.CoinChangeBottomUp(tc.coins, tc.amount)
+			rsp := CoinChangeBottomUp(tc.coins, tc.amount)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}

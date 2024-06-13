@@ -1,4 +1,4 @@
-package coin_change
+package leetcode_330
 
 import "math"
 
