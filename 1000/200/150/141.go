@@ -1,4 +1,4 @@
-package linked_list_cycle
+package leetcode_150
 
 import "leetcode/util"
 

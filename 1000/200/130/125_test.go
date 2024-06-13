@@ -1,11 +1,11 @@
-package valid_palindrome
+package leetcode_130
 
 import (
 	"reflect"
 	"testing"
 )
 
-var tests = []struct {
+var tests125 = []struct {
 	name     string
 	input    string
 	expected bool
@@ -28,7 +28,7 @@ var tests = []struct {
 }
 
 func TestIsPalindrome_Reverse(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests125 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := isPalindrome_reverse(tt.input)
 
@@ -40,7 +40,7 @@ func TestIsPalindrome_Reverse(t *testing.T) {
 }
 
 func TestIsPalindrome_TwoPointers(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests125 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := isPalindrome_twoPointers(tt.input)
 

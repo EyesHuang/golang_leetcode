@@ -1,4 +1,4 @@
-package valid_palindrome
+package leetcode_130
 
 import (
 	"strings"

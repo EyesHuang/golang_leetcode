@@ -1,4 +1,4 @@
-package best_time_to_buy_and_sell_stock
+package leetcode_130
 
 import "math"
 

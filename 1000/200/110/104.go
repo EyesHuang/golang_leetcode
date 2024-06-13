@@ -1,4 +1,4 @@
-package maximum_depth_of_binary_tree
+package leetcode_110
 
 import "leetcode/util"
 
