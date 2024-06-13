@@ -1,9 +1,7 @@
-package koko_eating_bananas_test
+package leetcode_880
 
 import (
 	"testing"
-
-	q875keb "leetcode/875"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -15,7 +13,7 @@ type q875 struct {
 	ans    int
 }
 
-var testCases = []q875{
+var testCases875 = []q875{
 	{
 		"Scenario 1",
 		[]int{3, 6, 7, 11},
@@ -37,9 +35,9 @@ var testCases = []q875{
 }
 
 func Test_MinEatingSpeed(t *testing.T) {
-	for _, tc := range testCases {
+	for _, tc := range testCases875 {
 		t.Run(tc.name, func(t *testing.T) {
-			rsp := q875keb.MinEatingSpeed(tc.array, tc.target)
+			rsp := minEatingSpeed(tc.array, tc.target)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}

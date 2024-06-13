@@ -1,6 +1,6 @@
-package koko_eating_bananas
+package leetcode_880
 
-func MinEatingSpeed(piles []int, h int) int {
+func minEatingSpeed(piles []int, h int) int {
 	// Koko at least eats 1 banana per hour
 	l, r := 1, 1
 
