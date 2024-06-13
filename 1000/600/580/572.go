@@ -1,4 +1,4 @@
-package subtree_of_another_tree
+package leetcode_580
 
 import "leetcode/util"
 

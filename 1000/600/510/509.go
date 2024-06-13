@@ -1,4 +1,4 @@
-package fibonacci_number
+package leetcode_510
 
 // FibBruteforce
 // Time Complexity: O(2^n)

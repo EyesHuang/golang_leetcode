@@ -1,4 +1,4 @@
-package subtree_of_another_tree
+package leetcode_580
 
 import (
 	"reflect"
@@ -7,7 +7,7 @@ import (
 	"leetcode/util"
 )
 
-var tests = []struct {
+var tests572 = []struct {
 	name     string
 	root     *util.TreeNode
 	subRoot  *util.TreeNode
@@ -75,7 +75,7 @@ var tests = []struct {
 }
 
 func TestIsSubtree(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests572 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := isSubtree(tt.root, tt.subRoot)
 
