@@ -1,6 +1,8 @@
 package leetcode_70
 
-func climbStairs_BruteForce(n int) int {
+// Time complexity: O(2^n)
+// Space complexity: O(n)
+func climbStairs_Recursion(n int) int {
 	return climb_stairs(0, n)
 }
 
@@ -18,6 +20,8 @@ func climb_stairs(i, n int) int {
 	return climb_stairs(i+1, n) + climb_stairs(i+2, n)
 }
 
+// Time complexity: O(n)
+// Space complexity: O(n)
 func climbStairs_Memo(n int) int {
 	memo := make([]int, n+1)
 	return climb_stairs_memo(0, n, memo)
@@ -43,6 +47,8 @@ func climb_stairs_memo(i, n int, memo []int) int {
 	return memo[i]
 }
 
+// Time complexity: O(n)
+// Space complexity: O(n)
 func climbStairs_DP(n int) int {
 	if n == 1 {
 		return 1
@@ -54,4 +60,18 @@ func climbStairs_DP(n int) int {
 		dp[i] = dp[i-1] + dp[i-2]
 	}
 	return dp[n]
+}
+
+// Time complexity: O(n)
+// Space complexity: O(1)
+func climbStairs_DP2(n int) int {
+	a, b := 1, 1
+
+	for i := 0; i < n-1; i++ {
+		tmp := a + b
+		b = a
+		a = tmp
+	}
+
+	return a
 }

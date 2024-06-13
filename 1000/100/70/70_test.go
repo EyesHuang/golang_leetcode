@@ -24,10 +24,10 @@ var tests = []struct {
 	},
 }
 
-func TestClimbStairs_BruteForce(t *testing.T) {
+func TestClimbStairs_Recursion(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			ways := climbStairs_BruteForce(tt.stair)
+			ways := climbStairs_Recursion(tt.stair)
 
 			if ways != tt.expected {
 				t.Errorf("got %d, want %d", ways, tt.expected)
@@ -52,6 +52,18 @@ func TestClimbStairs_DP(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			ways := climbStairs_DP(tt.stair)
+
+			if ways != tt.expected {
+				t.Errorf("got %d, want %d", ways, tt.expected)
+			}
+		})
+	}
+}
+
+func TestClimbStairs_DP2(t *testing.T) {
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			ways := climbStairs_DP2(tt.stair)
 
 			if ways != tt.expected {
 				t.Errorf("got %d, want %d", ways, tt.expected)
