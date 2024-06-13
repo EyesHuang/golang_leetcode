@@ -1,4 +1,4 @@
-package reverse_linked_list
+package leetcode_210
 
 import (
 	"reflect"
@@ -8,9 +8,9 @@ import (
 )
 
 var (
-	emptySlice []int
+	emptySlice206 []int
 
-	tests = []struct {
+	tests206 = []struct {
 		name     string
 		head     []int
 		expected []int
@@ -28,13 +28,13 @@ var (
 		{
 			"Test 3",
 			[]int{},
-			emptySlice,
+			emptySlice206,
 		},
 	}
 )
 
 func TestReverseListIterative(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests206 {
 		t.Run(tt.name, func(t *testing.T) {
 			headList := util.CreateLinkedList(tt.head)
 
@@ -49,7 +49,7 @@ func TestReverseListIterative(t *testing.T) {
 }
 
 func TestReverseListRecursive(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests206 {
 		t.Run(tt.name, func(t *testing.T) {
 			headList := util.CreateLinkedList(tt.head)
 

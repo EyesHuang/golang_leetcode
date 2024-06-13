@@ -1,4 +1,4 @@
-package meeting_rooms
+package leetcode_260
 
 import "sort"
 

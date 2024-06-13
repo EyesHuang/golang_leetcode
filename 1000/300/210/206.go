@@ -1,4 +1,4 @@
-package reverse_linked_list
+package leetcode_210
 
 import "leetcode/util"
 

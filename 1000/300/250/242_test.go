@@ -1,11 +1,11 @@
-package valid_anagram
+package leetcode_250
 
 import (
 	"reflect"
 	"testing"
 )
 
-var tests = []struct {
+var tests242 = []struct {
 	name     string
 	s        string
 	t        string
@@ -38,7 +38,7 @@ var tests = []struct {
 }
 
 func TestIsAnagram_BruteForce(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests242 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := isAnagram_bruteForce(tt.s, tt.t)
 
@@ -50,7 +50,7 @@ func TestIsAnagram_BruteForce(t *testing.T) {
 }
 
 func TestIsAnagram_FrequencyCounter(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests242 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := isAnagram_frequencyCounter(tt.s, tt.t)
 
@@ -62,7 +62,7 @@ func TestIsAnagram_FrequencyCounter(t *testing.T) {
 }
 
 func TestIsAnagram_Sorting(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests242 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := isAnagram_sorting(tt.s, tt.t)
 

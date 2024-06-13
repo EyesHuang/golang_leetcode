@@ -1,4 +1,4 @@
-package invert_binary_tree
+package leetcode_230
 
 import "leetcode/util"
 

@@ -1,4 +1,4 @@
-package invert_binary_tree
+package leetcode_230
 
 import (
 	"reflect"
@@ -7,7 +7,7 @@ import (
 	"leetcode/util"
 )
 
-var tests = []struct {
+var tests226 = []struct {
 	name     string
 	input    *util.TreeNode
 	expected *util.TreeNode
@@ -96,7 +96,7 @@ var tests = []struct {
 }
 
 func TestInvertTreeRecursion(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests226 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := invertTree_recursion(tt.input)
 
@@ -108,7 +108,7 @@ func TestInvertTreeRecursion(t *testing.T) {
 }
 
 func TestInvertTreeIteration(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests226 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := invertTree_iteration(tt.input)
 

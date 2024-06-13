@@ -1,4 +1,4 @@
-package valid_anagram
+package leetcode_250
 
 import (
 	"sort"

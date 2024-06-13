@@ -1,11 +1,11 @@
-package meeting_rooms
+package leetcode_260
 
 import (
 	"reflect"
 	"testing"
 )
 
-var tests = []struct {
+var tests252 = []struct {
 	name      string
 	intervals [][]int
 	expected  bool
@@ -28,7 +28,7 @@ var tests = []struct {
 }
 
 func TestCanAttendMeetings_BruteForce(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests252 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := canAttendMeetings_bruteForce(tt.intervals)
 
@@ -40,7 +40,7 @@ func TestCanAttendMeetings_BruteForce(t *testing.T) {
 }
 
 func TestCanAttendMeetings_Sorting(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests252 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := canAttendMeetings_Sorting(tt.intervals)
 

@@ -1,11 +1,11 @@
-package contains_duplicate
+package leetcode_220
 
 import (
 	"reflect"
 	"testing"
 )
 
-var tests = []struct {
+var tests217 = []struct {
 	name     string
 	nums     []int
 	expected bool
@@ -28,7 +28,7 @@ var tests = []struct {
 }
 
 func TestContainsDuplicate_BruteForce(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests217 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := containsDuplicate_bruteForce(tt.nums)
 
@@ -40,7 +40,7 @@ func TestContainsDuplicate_BruteForce(t *testing.T) {
 }
 
 func TestContainsDuplicate_set(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range tests217 {
 		t.Run(tt.name, func(t *testing.T) {
 			res := containsDuplicate_set(tt.nums)
 

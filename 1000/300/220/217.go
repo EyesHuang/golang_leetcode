@@ -1,4 +1,4 @@
-package contains_duplicate
+package leetcode_220
 
 // Time complexity: O(n^2)
 // Space complexity: O(1)
