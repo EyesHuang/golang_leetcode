@@ -56,7 +56,6 @@ func longestConsecutive_sorting(nums []int) int {
 				longest = length
 			}
 		}
-
 	}
 
 	return longest
