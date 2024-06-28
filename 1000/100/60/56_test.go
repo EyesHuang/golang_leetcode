@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-var tests = []struct {
+var q57TestCases = []struct {
 	name      string
 	intervals [][]int
 	expected  [][]int
@@ -28,7 +28,7 @@ var tests = []struct {
 }
 
 func TestMerge(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range q57TestCases {
 		t.Run(tt.name, func(t *testing.T) {
 			res := merge(tt.intervals)
 
