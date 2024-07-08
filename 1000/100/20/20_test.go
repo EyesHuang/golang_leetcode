@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-var tests = []struct {
+var q20TestCases = []struct {
 	name     string
 	input    string
 	expected bool
@@ -38,7 +38,7 @@ var tests = []struct {
 }
 
 func TestIsValid(t *testing.T) {
-	for _, tt := range tests {
+	for _, tt := range q20TestCases {
 		t.Run(tt.name, func(t *testing.T) {
 			res := isValid(tt.input)
 
