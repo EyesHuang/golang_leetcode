@@ -26,7 +26,6 @@ func merge(intervals [][]int) [][]int {
 	}
 
 	return res
-
 }
 
 func max(a, b int) int {
