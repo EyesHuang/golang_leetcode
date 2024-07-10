@@ -35,3 +35,23 @@ func twoSum_hashMap(nums []int, target int) []int {
 
 	return nil
 }
+
+// Time complexity: O(n)
+// Space complexity: O(1)
+func twoSum_twoPointers(nums []int, target int) []int {
+	l, r := 0, len(nums)-1
+
+	for l < r {
+		sum := nums[l] + nums[r]
+
+		if sum < target {
+			l++
+		} else if sum > target {
+			r--
+		} else {
+			return []int{l, r}
+		}
+	}
+
+	return nil
+}
