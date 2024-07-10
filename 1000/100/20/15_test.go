@@ -43,3 +43,15 @@ func TestThreeSumTwoPointers(t *testing.T) {
 		})
 	}
 }
+
+func TestThreeSumHashSet(t *testing.T) {
+	for _, tt := range q15TestCases {
+		t.Run(tt.name, func(t *testing.T) {
+			res := threeSum_hashSet(tt.nums)
+
+			if !reflect.DeepEqual(res, tt.expected) {
+				t.Errorf("got %v, want %v", res, tt.expected)
+			}
+		})
+	}
+}
