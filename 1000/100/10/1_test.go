@@ -54,3 +54,15 @@ func TestTwoSum_HashMap(t *testing.T) {
 		})
 	}
 }
+
+func TestTwoSum_TwoPointers(t *testing.T) {
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			res := twoSum_twoPointers(tt.nums, tt.target)
+
+			if !reflect.DeepEqual(res, tt.expected) {
+				t.Errorf("got %v, want %v", res, tt.expected)
+			}
+		})
+	}
+}
