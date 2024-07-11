@@ -1,13 +1,17 @@
 package leetcode_10
 
-func LengthOfLongestSubstringBruteForce(s string) int {
+import "leetcode/util"
+
+// Time complexity: O(n^3)
+// Space complexity: O(n)
+func lengthOfLongestSubstring_bruteForce(s string) int {
 	n := len(s)
 	res := 0
 
 	for i := 0; i < n; i++ {
 		for j := i; j < n; j++ {
 			if checkDuplicateChar(i, j, s) {
-				res = max(res, j-i+1)
+				res = util.Max(res, j-i+1)
 			} else {
 				break
 			}
@@ -17,65 +21,34 @@ func LengthOfLongestSubstringBruteForce(s string) int {
 	return res
 }
 
+// Helper function to check if all characters in the substring s[i:j+1] are unique
 func checkDuplicateChar(start, end int, s string) bool {
-	m := make(map[uint8]int)
+	m := make(map[byte]bool)
 
 	for i := start; i <= end; i++ {
 		c := s[i]
-		if _, isExist := m[c]; isExist {
+		if m[c] {
 			return false
 		}
-		m[c]++
+		m[c] = true
 	}
 	return true
 }
 
-func LengthOfLongestSubstringS1(s string) int {
-	counts := make(map[uint8]int)
-	left := 0
-	right := 0
+// Time complexity: O(n)
+// Space complexity: O(n)
+func lengthOfLongestSubstring_slidingWindow(s string) int {
+	charSet := make(map[byte]bool)
+	l := 0
 	res := 0
 
-	for i := 0; i < len(s); i++ {
-		c := s[i]
-
-		if value, isExist := counts[c]; isExist {
-			left = max(left, value+1)
+	for r := range s {
+		for charSet[s[r]] {
+			delete(charSet, s[l])
+			l++
 		}
-
-		counts[c] = right
-		res = max(res, right-left+1)
-
-		right++
+		charSet[s[r]] = true
+		res = util.Max(res, r-l+1)
 	}
-
 	return res
-}
-
-func LengthOfLongestSubstringS2(s string) int {
-	m := make(map[uint8]int)
-	i, maxLen := 0, 0
-
-	for i < len(s) {
-		c := s[i]
-		if val, isExist := m[c]; !isExist {
-			m[c] = i
-			i++
-		} else {
-			maxLen = max(maxLen, len(m))
-			i = val + 1
-			m = make(map[uint8]int)
-		}
-	}
-
-	maxLen = max(maxLen, len(m))
-	m = nil
-	return maxLen
-}
-
-func max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }
