@@ -6,12 +6,10 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-type q3 struct {
+var q3TestCases = []struct {
 	param string
 	ans   int
-}
-
-var testCases = []q3{
+}{
 	{
 		"abcabcbb",
 		3,
@@ -34,28 +32,19 @@ var testCases = []q3{
 	},
 }
 
-func Test_BruteForce(t *testing.T) {
-	for _, tc := range testCases {
+func TestLengthOfLongestSubstring_BruteForce(t *testing.T) {
+	for _, tc := range q3TestCases {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := LengthOfLongestSubstringBruteForce(tc.param)
+			rsp := lengthOfLongestSubstring_bruteForce(tc.param)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}
 }
 
-func Test_S1(t *testing.T) {
-	for _, tc := range testCases {
+func TestLengthOfLongestSubstring_SlidingWindow(t *testing.T) {
+	for _, tc := range q3TestCases {
 		t.Run(tc.param, func(t *testing.T) {
-			rsp := LengthOfLongestSubstringS1(tc.param)
-			assert.Equal(t, tc.ans, rsp)
-		})
-	}
-}
-
-func Test_S2(t *testing.T) {
-	for _, tc := range testCases {
-		t.Run(tc.param, func(t *testing.T) {
-			rsp := LengthOfLongestSubstringS2(tc.param)
+			rsp := lengthOfLongestSubstring_slidingWindow(tc.param)
 			assert.Equal(t, tc.ans, rsp)
 		})
 	}
